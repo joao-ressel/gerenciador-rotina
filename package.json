@@ -1,0 +1,34 @@
+{
+  "name": "gerenciador-metas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch --env-file .env src/http/server.ts",
+    "seed": "tsx --env-file .env src/db/seed.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@biomejs/biome": "1.9.3",
+    "@tsconfig/node20": "^20.1.4",
+    "@types/node": "^22.7.4",
+    "drizzle-kit": "^0.24.2",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "@paralleldrive/cuid2": "^2.2.2",
+    "@tsconfig/node18": "^18.2.4",
+    "dayjs": "^1.11.13",
+    "drizzle-orm": "^0.33.0",
+    "fastify": "^5.0.0",
+    "fastify-type-provider-zod": "^4.0.1",
+    "gerenciador-metas": "file:",
+    "pg": "^8.13.0",
+    "postgres": "^3.4.4",
+    "postgresql": "^0.0.1",
+    "zod": "^3.23.8"
+  }
+}
