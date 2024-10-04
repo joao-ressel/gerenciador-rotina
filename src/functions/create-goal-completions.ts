@@ -1,8 +1,9 @@
-import { goals, goalCompletions } from "./../db/schema";
-import { db } from "../db";
 import dayjs from "dayjs";
-import weekOfYear from "dayjs/plugin/weekOfYear";
 import { eq, sql, and } from "drizzle-orm";
+import weekOfYear from "dayjs/plugin/weekOfYear";
+
+import { db } from "../db";
+import { goals, goalCompletions } from "./../db/schema";
 
 dayjs.extend(weekOfYear);
 
@@ -34,7 +35,7 @@ export async function createGoalCompletion({ goalId }: CreateGoalCompletionReque
   const result = await db
     .with(goalCompletionCounts)
     .select({
-      isIncomplete: sql/*sql*/ `
+      isIncomplete: sql`
         COALESCE(${goals.desiredWeeklyFrequency}, 0) > COALESCE(${goalCompletionCounts.completionCount}, 0)
       `,
     })
